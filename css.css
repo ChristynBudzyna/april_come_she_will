@@ -36,6 +36,7 @@ body {
 }
 
 .falling-object-img {
+    content:url("snowflake.svg");
     width: 40px;
 }
 

@@ -1,0 +1,79 @@
+body {
+    background-color: #7799bb;
+    padding: 20px;
+    margin: 0px;
+}
+
+#fallingObjectContainer {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.snowflake {
+    padding-left: 15px;
+    position: fixed;
+}
+
+.snowflake:hover {
+    cursor: default;
+}
+
+#spring-lyric-box, #summer-lyric-box, #fall-lyric-box, #winter-lyric-box {
+   display:none;
+   background-color: white;
+   opacity: .5;
+   border-radius: 4px;
+   opacity: .7;
+   padding: 2%;
+   font-family: 'Great Vibes', cursive;
+   font-size: 30px;
+   width: 400px;
+   margin: 0 auto;
+   position: relative;
+   top: 60px;
+   clear: both;
+}
+
+#winter-img {
+    content:url("snowflake.svg");
+    width: 40px;
+}
+
+#spring-img {
+    content:url("http://images.clipartpanda.com/rain-clipart-outline-KTjLbAgTq.png");
+    width: 40px;
+}
+
+#fall-img {
+    content:url("http://www.clipartqueen.com/image-files/signs-of-fall.png");
+    width: 40px;
+}
+
+#summer-img {
+    content:url("http://www.clipartqueen.com/image-files/soft-purple-flower.png");
+    width: 40px;
+}
+
+
+
+ul {
+    text-align: center;
+}
+
+li {
+    display: inline-block;
+    padding: 7%;
+
+}
+
+button {
+    font-family: 'Great Vibes', cursive;
+    font-size: 30px;
+    border: none;
+    background-color: white;
+    text-align: center;
+    padding: 0 10px 0 10px;
+    border-radius: 4px;
+    opacity: .7;
+}

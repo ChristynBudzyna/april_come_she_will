@@ -35,10 +35,26 @@ body {
    clear: both;
 }
 
-.falling-object-img {
+#winter-img {
     content:url("snowflake.svg");
     width: 40px;
 }
+
+#spring-img {
+    content:url("http://images.clipartpanda.com/rain-clipart-outline-KTjLbAgTq.png");
+    width: 40px;
+}
+
+#fall-img {
+    content:url("http://www.clipartqueen.com/image-files/signs-of-fall.png");
+    width: 40px;
+}
+
+#summer-img {
+    content:url("http://www.clipartqueen.com/image-files/soft-purple-flower.png");
+    width: 40px;
+}
+
 
 
 ul {

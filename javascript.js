@@ -1,32 +1,60 @@
 $(document).ready(function() {
-    setup();
+
+    $("#spring-img").hide();
+    $("#fall-img").hide();
+    $("#winter-img").hide();
+    $("#summer-img").hide();
 
     $("#winter-button").click(function() {
         $("#spring-lyric-box").hide();
         $("#summer-lyric-box").hide();
         $("#fall-lyric-box").hide();
+        $("#fall-img").hide();
+        $("#summer-img").hide();
+        $("#spring-img").hide();
+
+        $("#winter-img").show();
         $("#winter-lyric-box").show();
+        setup("#winter-img");
     })
 
     $("#spring-button").click(function() {
         $("#winter-lyric-box").hide();
         $("#summer-lyric-box").hide();
         $("#fall-lyric-box").hide();
+        $("#fall-img").hide();
+        $("#summer-img").hide();
+        $("#winter-img").hide();
+
+        $("#spring-img").show();
         $("#spring-lyric-box").show();
+        setup("#spring-img");
     })
 
     $("#summer-button").click(function() {
         $("#winter-lyric-box").hide();
         $("#spring-lyric-box").hide();
         $("#fall-lyric-box").hide();
+        $("#fall-img").hide();
+        $("#spring-img").hide();
+        $("#winter-img").hide();
+
+        $("#summer-img").show();
         $("#summer-lyric-box").show();
+        setup("#summer-img");
     })
 
     $("#fall-button").click(function() {
         $("#winter-lyric-box").hide();
         $("#spring-lyric-box").hide();
         $("#summer-lyric-box").hide();
+        $("#spring-img").hide();
+        $("#summer-img").hide();
+        $("#winter-img").hide();
+
+        $("#fall-img").show();
         $("#fall-lyric-box").show();
+        setup("#fall-img");
     })
 })
 
@@ -50,8 +78,9 @@ var browserHeight;
 var numberOfFallingObjects = 100;
 var resetPosition = false;
 
-function setup() {
-    window.addEventListener("DOMContentLoaded", generateFallingObjects, false);
+function setup(selector) {
+    window.addEventListener("DOMContentLoaded", generateFallingObjects(selector),
+        false);
     window.addEventListener("resize", setResetFlag, false);
 }
 
@@ -95,9 +124,9 @@ function setTranslate3DTransform(element, xPosition, yPosition) {
 }
 
 
-function generateFallingObjects(element) {
+function generateFallingObjects(selector) {
 
-    var originalFallingObject = document.querySelector(".falling-object-img");
+    var originalFallingObject = document.querySelector(selector);
 
     var fallingObjectContainer = originalFallingObject.parentNode;
 
@@ -106,16 +135,13 @@ function generateFallingObjects(element) {
 
     for (var i = 0; i < numberOfFallingObjects; i++) {
 
-        // clone our original snowflake and add it to snowflakeContainer
         var fallingObjectClone = originalFallingObject.cloneNode(true);
         fallingObjectContainer.appendChild(fallingObjectClone);
 
-        // set our snowflake's initial position and related properties
         var initialXPos = getPosition(50, browserWidth);
         var initialYPos = getPosition(50, browserHeight);
         var speed = 5+Math.random()*40;
 
-        // create our Snowflake object
         var fallingObject = new FallingObject(fallingObjectClone,
                                             speed,
                                             initialXPos,
@@ -158,3 +184,4 @@ function getPosition(offset, size) {
 function setResetFlag(e) {
     resetPosition = true;
 }
+
